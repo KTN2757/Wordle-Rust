@@ -1,0 +1,10 @@
+/mnt/Bulk Drive/Coding/Wordle/target/debug/deps/libcolored-fd31de53d5840832.rmeta: /home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/lib.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/color.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/control.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/error.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/style.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/customcolors.rs
+
+/mnt/Bulk Drive/Coding/Wordle/target/debug/deps/colored-fd31de53d5840832.d: /home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/lib.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/color.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/control.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/error.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/style.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/customcolors.rs
+
+/home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/lib.rs:
+/home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/color.rs:
+/home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/control.rs:
+/home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/error.rs:
+/home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/style.rs:
+/home/kritagya-dahal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/colored-3.0.0/src/customcolors.rs:
