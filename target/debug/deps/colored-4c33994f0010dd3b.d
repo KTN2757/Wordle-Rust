@@ -1,0 +1,10 @@
+/mnt/Bulk Drive/Coding/Wordle-Rust/target/debug/deps/colored-4c33994f0010dd3b.d: /home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/lib.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/color.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/control.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/error.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/style.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/customcolors.rs
+
+/mnt/Bulk Drive/Coding/Wordle-Rust/target/debug/deps/libcolored-4c33994f0010dd3b.rmeta: /home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/lib.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/color.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/control.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/error.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/style.rs /home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/customcolors.rs
+
+/home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/lib.rs:
+/home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/color.rs:
+/home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/control.rs:
+/home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/error.rs:
+/home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/style.rs:
+/home/kritagya-dahal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-3.0.0/src/customcolors.rs:

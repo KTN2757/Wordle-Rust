@@ -25,9 +25,8 @@ fn main() {
         let input_map: Vec<char> = input.chars().collect();
         println!("{:?}", word_map);
         println!("{:?}", input_map);
-        for i in 0..input_map.len() {
-            println!("{:?}", input_map[i]);
-            for j in 0..word_map.len() {
+        for i in 0..input_map.len() - 1 {
+            for j in i + 1..word_map.len() {
                 // if i == j {
                 //     if input_map[i] == word_map[j] {
                 //         // println!("{:?}", "".red(), input_map[i]);
