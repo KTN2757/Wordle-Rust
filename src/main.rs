@@ -15,13 +15,25 @@ fn main() {
     }
     let word = word_selector(word_list);
 
-    // Take input.
-    let mut input = String::new();
-    io::stdin().read_line(&mut input).expect("fizz");
-    let input = input.trim().to_lowercase();
+    println!("Welcome to Wordle! You have 6 attempts.\n");
 
-    // Main logic.
-    if input.len() == 5 {
+    // Game loop
+    for attempt in 1..=6 {
+        println!("Attempt {}/6:", attempt);
+
+        // Take input.
+        let mut input = String::new();
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input");
+        let input = input.trim().to_lowercase();
+
+        if input.len() != 5 {
+            println!("Please enter a 5-letter word!\n");
+            continue;
+        }
+
+        // Main logic.
         let word_map: Vec<char> = word.chars().collect();
         let input_map: Vec<char> = input.chars().collect();
 
@@ -49,6 +61,7 @@ fn main() {
             }
         }
 
+        print!("  ");
         for i in 0..5 {
             let letter = input_map[i].to_string();
             match result[i] {
@@ -65,9 +78,18 @@ fn main() {
             print!(" ");
         }
         println!("\n");
-    } else {
-        println!("Please enter a 5-letter word!");
+
+        if input == word {
+            println!(
+                "Congratulations! You guessed it in {} attempt{}!",
+                attempt,
+                if attempt == 1 { "" } else { "s" }
+            );
+            return;
+        }
     }
+
+    println!("Out of attempts! The word was: {}", word.to_uppercase());
 }
 
 #[derive(Debug, PartialEq, Clone, Copy)]
@@ -83,5 +105,5 @@ fn word_selector(word_list: Vec<&str>) -> String {
     if let Some(choice) = word_list.choose(&mut rng) {
         return choice.to_string();
     }
-    String::from("Error")
+    String::from("error")
 }
