@@ -14,19 +14,16 @@ fn main() {
         word_list.push(words);
     }
     let word = word_selector(word_list);
-    println!("{word}");
 
     // Take input.
     let mut input = String::new();
     io::stdin().read_line(&mut input).expect("fizz");
-    let input = input.trim();
+    let input = input.trim().to_lowercase();
 
     // Main logic.
     if input.len() == 5 {
         let word_map: Vec<char> = word.chars().collect();
         let input_map: Vec<char> = input.chars().collect();
-        println!("{:?}", word_map);
-        println!("{:?}", input_map);
 
         let mut letter_counts: HashMap<char, usize> = HashMap::new();
         for &ch in &word_map {
@@ -56,16 +53,18 @@ fn main() {
             let letter = input_map[i].to_string();
             match result[i] {
                 ColorState::Green => {
-                    println!("{}", String::from(input_map[i]).green().on_yellow());
+                    print!("{}", letter.black().on_bright_green().bold());
                 }
                 ColorState::Yellow => {
-                    println!("{}", String::from(input_map[i]).black().on_white());
+                    print!("{}", letter.black().on_bright_yellow().bold());
                 }
                 ColorState::Gray => {
-                    println!("{}", String::from(input_map[i]).red());
+                    print!("{}", letter.white().on_bright_black().bold());
                 }
             }
+            print!(" ");
         }
+        println!("\n");
     } else {
         println!("Please enter a 5-letter word!");
     }
