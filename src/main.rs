@@ -18,7 +18,8 @@ fn main() {
     println!("Welcome to Wordle! You have 6 attempts.\n");
 
     // Game loop
-    for attempt in 1..=6 {
+    let mut attempt = 1;
+    while attempt <= 6 {
         println!("Attempt {}/6:", attempt);
 
         // Take input.
@@ -32,6 +33,7 @@ fn main() {
             println!("Please enter a 5-letter word!\n");
             continue;
         }
+        attempt += 1;
 
         // Main logic.
         let word_map: Vec<char> = word.chars().collect();
