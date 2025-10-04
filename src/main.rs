@@ -1,13 +1,14 @@
 use colored::*;
 use rand::prelude::IndexedRandom;
 use rand::rng;
+use std::collections::HashMap;
 use std::fs;
 use std::io;
 
 fn main() {
     // Fetch the word.
     let wordle_words = fs::read_to_string("/mnt/Bulk Drive/Coding/LearnRust/wordle_words.txt");
-    let wordle_words = wordle_words.unwrap() as String;
+    let wordle_words = wordle_words.unwrap();
     let mut word_list = Vec::new();
     for words in wordle_words.split_whitespace() {
         word_list.push(words);
@@ -26,17 +27,57 @@ fn main() {
         let input_map: Vec<char> = input.chars().collect();
         println!("{:?}", word_map);
         println!("{:?}", input_map);
-        for i in 0..input_map.len() {
+
+        let mut letter_counts: HashMap<char, usize> = HashMap::new();
+        for &ch in &word_map {
+            *letter_counts.entry(ch).or_insert(0) += 1;
+        }
+
+        let mut result = vec![ColorState::Gray; 5];
+        for i in 0..5 {
             if input_map[i] == word_map[i] {
-                println!("{}", String::from(input_map[i]).green().on_yellow());
-            } else if word.contains(input_map[i]) {
-                println!("{}", String::from(input_map[i]).black().on_white());
-            } else {
-                println!("{}", String::from(input_map[i]).red());
+                result[i] = ColorState::Green;
+                *letter_counts.get_mut(&input_map[i]).unwrap() -= 1;
             }
         }
+
+        for i in 0..5 {
+            if result[i] == ColorState::Gray {
+                if let Some(count) = letter_counts.get_mut(&input_map[i]) {
+                    if *count > 0 {
+                        result[i] = ColorState::Yellow;
+                        *count -= 1;
+                    }
+                }
+            }
+        }
+
+        for i in 0..5 {
+            let letter = input_map[i].to_string();
+            match result[i] {
+                ColorState::Green => {
+                    println!("{}", String::from(input_map[i]).green().on_yellow());
+                }
+                ColorState::Yellow => {
+                    println!("{}", String::from(input_map[i]).black().on_white());
+                }
+                ColorState::Gray => {
+                    println!("{}", String::from(input_map[i]).red());
+                }
+            }
+        }
+    } else {
+        println!("Please enter a 5-letter word!");
     }
 }
+
+#[derive(Debug, PartialEq, Clone, Copy)]
+enum ColorState {
+    Green,
+    Yellow,
+    Gray,
+}
+
 // Random word selector.
 fn word_selector(word_list: Vec<&str>) -> String {
     let mut rng = rng();
