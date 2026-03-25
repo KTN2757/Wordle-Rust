@@ -7,7 +7,7 @@ use std::io;
 
 fn main() {
     // Fetch the word.
-    let wordle_words = fs::read_to_string("/mnt/Bulk Drive/Coding/LearnRust/wordle_words.txt");
+    let wordle_words = fs::read_to_string("/mnt/Bulk Drive/Coding/Wordle-Rust/wordle_words.txt");
     let wordle_words = wordle_words.unwrap();
     let mut word_list = Vec::new();
     for words in wordle_words.split_whitespace() {
@@ -15,7 +15,31 @@ fn main() {
     }
     let word = word_selector(word_list);
 
-    println!("Welcome to Wordle! You have 6 attempts.\n");
+    println!("Welcome to Wordle! You have 6 attempts.");
+    println!(
+        "{}",
+        "correct letter"
+            .to_uppercase()
+            .white()
+            .on_bright_green()
+            .bold()
+    );
+    println!(
+        "{}",
+        "misplaced letter"
+            .to_uppercase()
+            .black()
+            .on_bright_yellow()
+            .bold()
+    );
+    println!(
+        "{}\n",
+        "incorrect letter"
+            .to_uppercase()
+            .white()
+            .on_bright_black()
+            .bold()
+    );
 
     // Game loop
     let mut attempt = 1;
@@ -33,12 +57,17 @@ fn main() {
             println!("Please enter a 5-letter word!\n");
             continue;
         }
+
+        if !wordle_words.contains(&input) {
+            println!("{:?} isn't a word in the word list!\n", input);
+            continue;
+        }
+
         attempt += 1;
 
-        // Main logic.
         let word_map: Vec<char> = word.chars().collect();
         let input_map: Vec<char> = input.chars().collect();
-
+        // Main logic.
         let mut letter_counts: HashMap<char, usize> = HashMap::new();
         for &ch in &word_map {
             *letter_counts.entry(ch).or_insert(0) += 1;
@@ -68,13 +97,16 @@ fn main() {
             let letter = input_map[i].to_string();
             match result[i] {
                 ColorState::Green => {
-                    print!("{}", letter.black().on_bright_green().bold());
+                    print!("{}", letter.to_uppercase().white().on_bright_green().bold());
                 }
                 ColorState::Yellow => {
-                    print!("{}", letter.black().on_bright_yellow().bold());
+                    print!(
+                        "{}",
+                        letter.to_uppercase().black().on_bright_yellow().bold()
+                    );
                 }
                 ColorState::Gray => {
-                    print!("{}", letter.white().on_bright_black().bold());
+                    print!("{}", letter.to_uppercase().white().on_bright_black().bold());
                 }
             }
             print!(" ");
